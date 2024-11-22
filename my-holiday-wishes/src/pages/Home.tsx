@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 import TopicSection from "../components/TopicSection";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <TopicSection />
 
       {/* Footer Section */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

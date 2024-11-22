@@ -9,12 +9,12 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-green-500 to-red-500 text-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-green-500 to-red-500 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Title */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold">
+            <Link to="/" className="text-xl sm:text-2xl font-bold">
               🎄 Holiday Wishes 🎅
             </Link>
           </div>
@@ -23,19 +23,19 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
-              className="text-lg font-medium hover:underline focus:underline"
+              className="text-sm sm:text-base md:text-lg font-medium hover:underline focus:underline"
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="text-lg font-medium hover:underline focus:underline"
+              className="text-sm sm:text-base md:text-lg font-medium hover:underline focus:underline"
             >
               About
             </Link>
             <Link
               to="/topic"
-              className="text-lg font-medium hover:underline focus:underline"
+              className="text-sm sm:text-base md:text-lg font-medium hover:underline focus:underline"
             >
               Topic
             </Link>
@@ -81,21 +81,21 @@ const Header: React.FC = () => {
             <nav className="flex flex-col space-y-4 mt-2">
               <Link
                 to="/"
-                className="text-lg font-medium hover:underline focus:underline"
+                className="text-sm sm:text-base font-medium hover:underline focus:underline"
                 onClick={toggleMenu}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="text-lg font-medium hover:underline focus:underline"
+                className="text-sm sm:text-base font-medium hover:underline focus:underline"
                 onClick={toggleMenu}
               >
                 About
               </Link>
               <Link
                 to="/topic"
-                className="text-lg font-medium hover:underline focus:underline"
+                className="text-sm sm:text-base font-medium hover:underline focus:underline"
                 onClick={toggleMenu}
               >
                 Topic
