@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* import './index.css'; // Ensure this line is present in index.tsx */
+body{
+  /* background: ; */
+}
