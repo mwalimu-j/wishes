@@ -16,8 +16,8 @@ const HolidayCalendar: React.FC = () => {
 						Holiday Calendar
 					</h2>
 					<p className="text-lg text-gray-700 mb-10">
-						Stay updated with the key dates of the holiday season! Here's a list of 
-						upcoming celebrations and holidays to mark on your calendar.
+						Stay updated with the key dates of the holiday season! Here's a list
+						of upcoming celebrations and holidays to mark on your calendar.
 					</p>
 				</div>
 
