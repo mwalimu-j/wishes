@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { jsPDF } from "jspdf";
+import festiveImage from "../assets/image11.png"; // Update path to your image
 
 const UseWish: React.FC = () => {
   const location = useLocation();
@@ -11,11 +12,32 @@ const UseWish: React.FC = () => {
 
   const handleDownload = () => {
     const doc = new jsPDF();
-    doc.text("Holiday Wish Card", 10, 10);
-    doc.text(`To: ${recipient}`, 10, 30);
-    doc.text(wishMessage, 10, 50);
-    doc.text(`From: ${sender}`, 10, 90);
-    doc.save("HolidayWishCard.pdf");
+    doc.setFont("helvetica", "normal");
+
+    // Add festive background image
+    const image = new Image();
+    image.src = festiveImage;
+    image.onload = () => {
+      doc.addImage(image, "PNG", 10, 10, 180, 180); // Adjust dimensions as needed
+      doc.setTextColor(255, 0, 0); // Red for text
+      doc.setFontSize(22);
+      doc.text("Merry Christmas", 50, 90); // Place "Merry Christmas" text at the center
+
+      // Add recipient and sender text
+      doc.setFont("helvetica", "bolditalic");
+      doc.setTextColor(0, 255, 0); // Green for recipient
+      doc.text(`To: ${recipient}`, 10, 120); // Left side (recipient name)
+      doc.setTextColor(255, 0, 0); // Red for sender
+      doc.text(`From: ${sender}`, 130, 120); // Right side (sender name)
+
+      // Add the wish message
+      doc.setFontSize(16);
+      doc.setTextColor(0, 0, 0); // Black for message text
+      doc.text(wishMessage, 10, 140, { maxWidth: 180 });
+
+      // Save the document
+      doc.save("HolidayWishCard.pdf");
+    };
   };
 
   return (
@@ -54,7 +76,7 @@ const UseWish: React.FC = () => {
         </div>
         <button
           onClick={handleDownload}
-          className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 transition-all"
+          className="w-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white py-3 rounded-lg font-medium hover:bg-gradient-to-l transition-all"
         >
           Download Wish Card
         </button>
